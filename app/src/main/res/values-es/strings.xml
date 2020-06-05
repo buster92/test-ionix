@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="welcome">Bienvenido</string>
+	<string name="pay">Pagar</string>
+	<string name="wallet">Billetera</string>
+	<string name="stations">Estaciones</string>
+	<string name="benefits">Beneficios</string>
+	<string name="messages">Mensajes</string>
+	<string name="settings">Settings</string>
+
+	<string name="enter_rut">Ingresar Rut</string>
+	<string name="user_created">Usuario Creado: </string>
+</resources>
