@@ -1,8 +1,10 @@
 package com.andresgarrido.testionix.model.sandbox;
 
+import com.andresgarrido.testionix.model.jsonplaceholder.UserRequest;
+
 public class UserResponse {
-	private String name;
-	private UserDetail detail;
+	public String name;
+	public UserDetail detail;
 
 	public UserResponse(String name, UserDetail detail) {
 		this.name = name;
@@ -28,5 +30,9 @@ public class UserResponse {
 
 	public void setDetail(UserDetail detail) {
 		this.detail = detail;
+	}
+
+	public UserRequest getUserRequest() {
+		return new UserRequest(name, detail.getEmail(), detail.getPhoneNumber());
 	}
 }

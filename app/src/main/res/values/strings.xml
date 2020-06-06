@@ -8,8 +8,15 @@
 	<string name="benefits">Benefits</string>
 	<string name="messages">Messages</string>
 	<string name="settings">Settings</string>
+	<string name="loading">Loading…</string>
 
 	<string name="rut" translatable="false">Rut</string>
 	<string name="enter_rut">Ingresar Rut</string>
-	<string name="user_created">User Created: </string>
+	<string name="user_created">User Created ID: %s</string>
+	<string name="rut_rule">Included hyphen but no dots</string>
+	<string name="user_registered">User Registered</string>
+
+	<string name="error_generic">An error occurred, please try later</string>
+	<string name="error_user_dont_exist">Error, user must be created first</string>
+	<string name="error_field_empty">Can\'t be empty</string>
 </resources>

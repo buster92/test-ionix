@@ -3,11 +3,14 @@ package com.andresgarrido.testionix.network;
 import androidx.annotation.NonNull;
 
 import com.andresgarrido.testionix.BuildConfig;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 class ApiClient {
 
@@ -25,8 +28,11 @@ class ApiClient {
 		if (sandboxClient == null) {
 
 			try {
+				Gson gson = new GsonBuilder()
+						.create();
 				sandboxClient = new Retrofit.Builder()
 						.baseUrl(BuildConfig.SANDBOX_URL)
+						.addConverterFactory(GsonConverterFactory.create(gson))
 						.client(httpClient.build())
 						.build();
 
@@ -43,8 +49,11 @@ class ApiClient {
 		if (jsonPlaceholderClient == null) {
 
 			try {
+				Gson gson = new GsonBuilder()
+						.create();
 				jsonPlaceholderClient = new Retrofit.Builder()
 						.baseUrl(BuildConfig.JSON_PLACEHOLDER_URL)
+						.addConverterFactory(GsonConverterFactory.create(gson))
 						.client(httpClient.build())
 						.build();
 

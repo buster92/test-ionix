@@ -1,25 +1,19 @@
 package com.andresgarrido.testionix.model.sandbox;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserListResponse {
-	private int responseCode;
-	private String description;
-	private UserList userList;
+	public int responseCode;
+	public String description;
+	public UserList result;
 
 	public UserListResponse(int responseCode, String description, List<UserResponse> userList) {
 		this.responseCode = responseCode;
 		this.description = description;
-		this.userList = new UserList(userList);
+		this.result = new UserList(userList);
 	}
 
-	public static class UserList {
-		public List<UserResponse> items;
-
-		public UserList(List<UserResponse> items) {
-			this.items = items;
-		}
-	}
 
 	public int getResponseCode() {
 		return responseCode;
@@ -38,11 +32,13 @@ public class UserListResponse {
 	}
 
 	public List<UserResponse> getUserList() {
-		return userList.items;
+		if (result.items == null)
+			return new ArrayList<>();
+		return result.items;
 	}
 
 	public void setUserList(List<UserResponse> userList) {
-		this.userList.items.clear();
-		this.userList.items.addAll(userList);
+		this.result.items.clear();
+		this.result.items.addAll(userList);
 	}
 }

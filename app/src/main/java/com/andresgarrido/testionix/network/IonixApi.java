@@ -25,7 +25,7 @@ public class IonixApi {
 	}
 
 	public static void searchRut(String rut) {
-		String rutEncoded = Utils.encodeString(rut);
+		String rutEncoded = Utils.encodeString(rut).trim();
 		getSandboxEndpoint().search(rutEncoded).enqueue(new Callback<UserListResponse>() {
 			@Override
 			public void onResponse(Call<UserListResponse> call, Response<UserListResponse> response) {
