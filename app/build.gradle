@@ -18,6 +18,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "IONIX_KEY", '"' + IONIX_KEY + '"'
+            buildConfigField "String", "SANDBOX_URL", "\"https://sandbox.ionix.cl/test-tecnico/\""
+            buildConfigField "String", "JSON_PLACEHOLDER_URL", "\"https://jsonplaceholder.typicode.com/\""
+        }
+        debug {
+            buildConfigField "String", "IONIX_KEY", '"' + IONIX_KEY + '"'
+            buildConfigField "String", "SANDBOX_URL", "\"https://sandbox.ionix.cl/test-tecnico/\""
+            buildConfigField "String", "JSON_PLACEHOLDER_URL", "\"https://jsonplaceholder.typicode.com/\""
         }
     }
 
@@ -28,7 +37,17 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+
+    //Event Bus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    testImplementation "org.mockito:mockito-core:3.3.3"
 }
