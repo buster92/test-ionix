@@ -1,6 +1,6 @@
 package com.andresgarrido.testionix.network;
 
-import com.andresgarrido.testionix.model.UserListResponse;
+import com.andresgarrido.testionix.model.sandbox.UserListResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -1,4 +1,4 @@
-package com.andresgarrido.testionix.model;
+package com.andresgarrido.testionix.model.sandbox;
 
 import java.util.List;
 
